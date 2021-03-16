@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="clima.css">
+    <title>Document</title>
+
+</head>
+<body>
+   <form onsubmit="setarClima(event)">
+       <label for="clima">Escolha o clima de hoje:</label>
+       <select id="clima">
+           <option value="">Escolha o clima aqui</option>
+           <option value="ensolarado">Ensolarado</option>
+           <option value="chuvoso">Chuvoso</option>
+           <option value="nublado">Nublado</option>
+           <option value="nevando">Nevando</option>
+       </select>
+       <button>
+           Enviar
+       </button>
+   </form> 
+
+   <p>Esperando a mensagem de hoje...</p>
+
+   <script>
+
+       var select = document.querySelector('select');
+       var resposta = document.querySelector('p')
+
+       function setarClima(event) {
+
+        event.preventDefault();
+
+        var escolha = select.value;
+
+        if (escolha == 'ensolarado') {
+            resposta.textContent = 'O dia está lindo e o sol esta brilhando';
+        } else if (escolha == 'chuvoso') {
+            resposta.textContent = 'Hoje está chovendo'; 
+        }   else if (escolha == 'nevando') {
+            resposta.textContent = 'Hoje está nevando';
+        }  else if (escolha == 'nublado') {
+            resposta.textContent = 'Hoje está nublado';
+        } else{
+            resposta.textContent = 'Esperando a mensagem de hoje'
+        }
+       };
+   </script>
+</body>
+</html>
